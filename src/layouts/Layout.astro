@@ -1,3 +1,10 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -6,13 +13,17 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
+        <title>Sandhu Web Astro</title>	
+   </head> 
 	<body>
+	<Header />
+	<main class="container">
 		<slot />
-	</body>
+	</main>
+	<Footer companyName="Sandhu Web Astro" year={new Date().getFullYear()} />
+</body>
 </html>
-
+ 
 <style>
 	html,
 	body {

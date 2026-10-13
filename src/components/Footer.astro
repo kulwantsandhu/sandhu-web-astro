@@ -1,0 +1,17 @@
+---
+const { companyName, year } = Astro.props;
+---
+
+<footer>
+	<div class="container">
+		<p>© {year} {companyName}. All rights reserved.</p>
+	</div>
+</footer>
+
+<style>
+	footer {
+		border-top: 1px solid var(--color-border);
+		margin-top: 60px;
+		padding: 20px 0;
+	}
+</style>

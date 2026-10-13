@@ -1,0 +1,34 @@
+---
+const siteName = "Sandhu Web Astro";
+---
+
+<header>
+	<div class="container header-inner">
+		<a href="/" class="logo">{siteName}</a>
+		<nav>
+	<a href="/">Home</a>
+	<a href="/case-studies">Case Studies</a>
+	<a href="/about">About</a>
+</nav>
+	</div>
+</header>
+
+<style>
+	header {
+		border-bottom: 1px solid var(--color-border);
+	}
+	.header-inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	.logo {
+		font-weight: bold;
+		font-size: 20px;
+	}
+	nav a {
+		margin-left: 20px;
+	}
+</style>

@@ -1,0 +1,46 @@
+---
+const { title, summary, industry, client, featured = false, href } = Astro.props;
+---
+
+<a href={href} class="card">
+	{featured && <span class="badge">Featured</span>}
+	<p class="industry">{industry}</p>
+	<h2>{title}</h2>
+	<p>{summary}</p>
+	<p class="client">Client: {client}</p>
+</a>
+
+<style>
+	.card {
+		border: 1px solid var(--color-border);
+		border-radius: 12px;
+		padding: 24px;
+		display: block;
+	}
+	.card:hover {
+		border-color: var(--color-accent);
+	}
+	.card h2 {
+		font-size: 22px;
+		margin: 0 0 8px;
+	}
+	.industry {
+		font-size: 13px;
+		text-transform: uppercase;
+		color: var(--color-accent);
+		margin-bottom: 8px;
+	}
+	.client {
+		font-size: 14px;
+		margin: 0;
+	}
+	.badge {
+		display: inline-block;
+		background: var(--color-accent);
+		color: #fff;
+		font-size: 12px;
+		padding: 4px 10px;
+		border-radius: 20px;
+		margin-bottom: 12px;
+	}
+</style>

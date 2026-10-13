@@ -1,0 +1,56 @@
+/* ===== Variables (like Webflow Variables) ===== */
+:root {
+	--color-text: #1a1a1a;
+	--color-muted: #666666;
+	--color-bg: #ffffff;
+	--color-accent: #5b3df5;
+	--color-border: #e5e5e5;
+
+	--font-main: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+	--container-width: 1200px;
+	--space-page: 40px;
+}
+
+/* ===== Reset ===== */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: var(--font-main);
+	color: var(--color-text);
+	background: var(--color-bg);
+	line-height: 1.6;
+}
+
+/* ===== Typography ===== */
+h1 {
+	font-size: 48px;
+	line-height: 1.2;
+	margin: 0 0 16px;
+}
+
+p {
+	margin: 0 0 16px;
+	color: var(--color-muted);
+}
+
+a {
+	color: var(--color-text);
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--color-accent);
+}
+
+/* ===== Layout helper ===== */
+.container {
+	max-width: var(--container-width);
+	margin: 0 auto;
+	padding: 0 var(--space-page);
+}

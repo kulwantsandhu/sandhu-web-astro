@@ -1,11 +1,48 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import CaseStudyCard from '../components/CaseStudyCard.astro';
+import { getCollection } from 'astro:content';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const siteName = "Sandhu Web Astro";
+
+const featuredWork = await getCollection('caseStudies', (item) => item.data.featured);
 ---
 
 <Layout>
-	<Welcome />
+	<h1>Welcome to {siteName}</h1>
+	<p>We design and build fast, modern websites.</p>
+
+	<h2 class="section-title">Featured work</h2>
+
+	<div class="grid">
+		{featuredWork.map((item) => (
+			<CaseStudyCard
+				title={item.data.title}
+				summary={item.data.summary}
+				industry={item.data.industry}
+				client={item.data.client}
+				featured={item.data.featured}
+				href={`/case-studies/${item.id}`}
+			/>
+		))}
+	</div>
+
+	<a href="/case-studies" class="see-all">See all case studies →</a>
 </Layout>
+
+<style>
+	.section-title {
+		margin-top: 60px;
+	}
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		gap: 24px;
+		margin-top: 24px;
+	}
+	.see-all {
+		display: inline-block;
+		margin-top: 24px;
+		color: var(--color-accent);
+	}
+</style>
