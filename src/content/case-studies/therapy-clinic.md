@@ -4,6 +4,8 @@ client: "Wellness Clinic"
 industry: "Healthcare"
 summary: "A calm, accessible website design with a clear booking journey."
 featured: false
+cover: "./therapy-clinic.jpg"
+coverAlt: "Calm clinic homepage with a Book a session button"
 ---
 
 ## The challenge

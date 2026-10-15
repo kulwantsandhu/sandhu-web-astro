@@ -4,6 +4,8 @@ client: "Media Agency"
 industry: "Marketing"
 summary: "A case studies page with a featured hero and filterable project cards."
 featured: false
+cover: "./media-agency.jpg"
+coverAlt: "Dark agency portfolio page with filter buttons and project cards"
 ---
 
 ## The challenge

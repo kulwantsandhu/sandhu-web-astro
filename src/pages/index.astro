@@ -23,6 +23,8 @@ const featuredWork = await getCollection('caseStudies', (item) => item.data.feat
 				client={item.data.client}
 				featured={item.data.featured}
 				href={`/case-studies/${item.id}`}
+				image={item.data.cover}
+				imageAlt={item.data.coverAlt}
 			/>
 		))}
 	</div>

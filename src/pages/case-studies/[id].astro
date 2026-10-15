@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -21,6 +22,15 @@ const { Content } = await render(item);
 	<h1>{item.data.title}</h1>
 	<p class="summary">{item.data.summary}</p>
 	<p class="client">Client: {item.data.client}</p>
+
+	<div class="hero-image">
+		<Image
+			src={item.data.cover}
+			alt={item.data.coverAlt}
+			width={1200}
+			loading="eager"
+		/>
+	</div>
 
 	<div class="body">
 		<Content />
@@ -44,11 +54,20 @@ const { Content } = await render(item);
 	}
 	.client {
 		font-size: 14px;
-		padding-bottom: 30px;
-		border-bottom: 1px solid var(--color-border);
+		margin-bottom: 30px;
+	}
+	.hero-image {
+		border-radius: 16px;
+		overflow: hidden;
+		border: 1px solid var(--color-border);
+	}
+	.hero-image :global(img) {
+		width: 100%;
+		height: auto;
+		display: block;
 	}
 	.body {
 		max-width: 700px;
-		margin-top: 30px;
+		margin-top: 40px;
 	}
 </style>

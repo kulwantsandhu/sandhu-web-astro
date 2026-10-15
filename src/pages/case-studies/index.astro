@@ -30,6 +30,8 @@ const industries = [...new Set(caseStudies.map((item) => item.data.industry))];
 					client={item.data.client}
 					featured={item.data.featured}
 					href={`/case-studies/${item.id}`}
+					image={item.data.cover}
+					imageAlt={item.data.coverAlt}
 				/>
 			</div>
 		))}
