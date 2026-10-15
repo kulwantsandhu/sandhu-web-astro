@@ -4,8 +4,8 @@ import { Image } from 'astro:assets';
 const { title, summary, industry, client, featured = false, href, image, imageAlt } = Astro.props;
 ---
 
-<a href={href} class="card">
-	<div class="thumb">
+<a href={href} class="card" data-reveal>	
+    <div class="thumb">
 		<Image src={image} alt={imageAlt} width={640} />
 	</div>
 
@@ -17,7 +17,25 @@ const { title, summary, industry, client, featured = false, href, image, imageAl
 		<p class="client">Client: {client}</p>
 	</div>
 </a>
+<script>
+	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+	gsap.registerPlugin(ScrollTrigger);
+
+	gsap.utils.toArray('[data-reveal]').forEach((card) => {
+		gsap.from(card, {
+			opacity: 0,
+			y: 60,
+			duration: 0.8,
+			ease: 'power3.out',
+			scrollTrigger: {
+				trigger: card,
+				start: 'top 85%',
+			},
+		});
+	});
+</script>
 <style>
 	.card {
 		border: 1px solid var(--color-border);

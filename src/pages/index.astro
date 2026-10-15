@@ -9,8 +9,8 @@ const featuredWork = await getCollection('caseStudies', (item) => item.data.feat
 ---
 
 <Layout>
-	<h1>Welcome to {siteName}</h1>
-	<p>We design and build fast, modern websites.</p>
+	<h1 class="hero-anim">Welcome to {siteName}</h1>
+<p class="hero-anim">We design and build fast, modern websites.</p>
 
 	<h2 class="section-title">Featured work</h2>
 
@@ -31,7 +31,17 @@ const featuredWork = await getCollection('caseStudies', (item) => item.data.feat
 
 	<a href="/case-studies" class="see-all">See all case studies →</a>
 </Layout>
+<script>
+	import { gsap } from 'gsap';
 
+	gsap.from('.hero-anim', {
+		opacity: 0,
+		y: 40,
+		duration: 1,
+		ease: 'power3.out',
+		stagger: 0.15,
+	});
+</script>
 <style>
 	.section-title {
 		margin-top: 60px;
