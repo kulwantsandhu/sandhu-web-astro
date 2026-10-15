@@ -15,8 +15,8 @@ const { item } = Astro.props;
 const { Content } = await render(item);
 ---
 
-<Layout>
-	<a href="/case-studies" class="back">← All case studies</a>
+<Layout title={item.data.title} description={item.data.summary}>	
+<a href="/case-studies" class="back">← All case studies</a>
 
 	<p class="industry">{item.data.industry}</p>
 	<h1>{item.data.title}</h1>

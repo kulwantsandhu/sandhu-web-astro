@@ -9,8 +9,7 @@ const caseStudies = await getCollection('caseStudies');
 const industries = [...new Set(caseStudies.map((item) => item.data.industry))];
 ---
 
-<Layout>
-	<h1>Case Studies</h1>
+<Layout title="Case Studies" description="Selected website projects across SaaS, marketing and healthcare.">	<h1>Case Studies</h1>
 	<p>Some of the projects we've worked on.</p>
 
 	<div class="filters">
