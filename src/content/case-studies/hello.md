@@ -4,7 +4,7 @@ client: test
 industry: test
 summary: test
 featured: true
-cover: https://picsum.photos/id/269/1920/1280.webp
+cover: media-agency.jpg
 coverAlt: test
 ---
 
