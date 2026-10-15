@@ -23,16 +23,20 @@ const { title, summary, industry, client, featured = false, href, image, imageAl
 
 	gsap.registerPlugin(ScrollTrigger);
 
-	gsap.utils.toArray('[data-reveal]').forEach((card) => {
-		gsap.from(card, {
-			opacity: 0,
-			y: 60,
-			duration: 0.8,
-			ease: 'power3.out',
-			scrollTrigger: {
-				trigger: card,
-				start: 'top 85%',
-			},
+	const mm = gsap.matchMedia();
+
+	mm.add('(prefers-reduced-motion: no-preference)', () => {
+		gsap.utils.toArray('[data-reveal]').forEach((card) => {
+			gsap.from(card, {
+				opacity: 0,
+				y: 60,
+				duration: 0.8,
+				ease: 'power3.out',
+				scrollTrigger: {
+					trigger: card,
+					start: 'top 85%',
+				},
+			});
 		});
 	});
 </script>
