@@ -1,0 +1,28 @@
+backend:
+  name: github
+  repo: kulwantsandhu/sandhu-web-astro
+  branch: main
+
+media_folder: public/media
+public_folder: /media
+
+collections:
+  - name: case-studies
+    label: Case Studies
+    label_singular: Case Study
+    folder: src/content/case-studies
+    extension: md
+    format: frontmatter
+    create: true
+    slug: "{{slug}}"
+    media_folder: ""
+    public_folder: "./"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Client, name: client, widget: string }
+      - { label: Industry, name: industry, widget: string }
+      - { label: Summary, name: summary, widget: text }
+      - { label: Featured, name: featured, widget: boolean, default: false }
+      - { label: Cover image, name: cover, widget: image }
+      - { label: Cover alt text, name: coverAlt, widget: string }
+      - { label: Body, name: body, widget: markdown }
