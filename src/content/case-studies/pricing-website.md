@@ -1,11 +1,11 @@
 ---
-title: "Pricing Website Redesign"
-client: "Pricing Co"
-industry: "SaaS"
-summary: "A full website rebuild with a new case studies system and industry pages."
+title: Pricing Website Redesign
+client: Pricing Co
+industry: SaaS
+summary: A full website rebuild with a new case studies system and industry pages.
 featured: true
-cover: "./pricing-website.jpg"
-coverAlt: "Pricing page design with three plan cards"
+cover: https://picsum.photos/id/417/1920/1280.webp
+coverAlt: Pricing page design with three plan cards
 ---
 
 ## The challenge
