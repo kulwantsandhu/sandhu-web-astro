@@ -8,9 +8,12 @@ const siteName = 'Sandhu Web';
 const {
 	title,
 	description = 'We design and build fast, modern websites with Astro and Webflow.',
+	image = '/og-default.png',
 } = Astro.props;
 
 const pageTitle = title ? `${title} | ${siteName}` : siteName;
+const pageUrl = new URL(Astro.url.pathname, Astro.site);
+const imageUrl = new URL(image, Astro.site);
 ---
 
 
@@ -25,6 +28,19 @@ const pageTitle = title ? `${title} | ${siteName}` : siteName;
 		<title>{pageTitle}</title>
 		<meta name="description" content={description} />
 		<link rel="sitemap" href="/sitemap-index.xml" />
+		<!-- Open Graph (LinkedIn, WhatsApp, Facebook) -->
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content={siteName} />
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={pageUrl} />
+		<meta property="og:image" content={imageUrl} />
+
+		<!-- X / Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={imageUrl} />
    </head> 
 	<body>
 	<Header />
